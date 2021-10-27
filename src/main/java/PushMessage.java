@@ -13,27 +13,20 @@ import java.util.Set;
 
 public class PushMessage {
     // STEP1：获取应用基本信息
-    private static String appId = "Lz99d9bsim57izLwSTHFW6";
-    private static String appKey = "XY5rn6IwX89iWEvpvSCOH1";
-    private static String masterSecret = "azsQbQA4d28pCS88ucF4j3";
+    private static String appId = "AemBVRYvqh7h3EUZOmUAn5";
+    private static String appKey = "6wmjbMdwsE8wcOe54ncjk";
+    private static String masterSecret = "vAd2IqVapg72Z1nbcx5mx1";
 
-    private static String appId2 = "VxHF6idnsf6CmxXwbn0nu5";
-    private static String appKey2 = "J4qlTVnmv98pX4fwkTrMB9";
-    private static String masterSecret2 = "r1UmvyhNY8ATvn8Mwuw6q1";
-
-    private static String appId3 = "WNaC1AdMHA6fOV3VZdgy61";
-    private static String appKey3 = "GR8KDlZmUM8Hxe96WEq5FA";
-    private static String masterSecret3 = "nW1lwL10aE8HmHB6rYHGF1";
-
-    private static String clientId = "c3c0298df6d5a47cad762fda2d4f8b42";
+    private static String clientId = "b5861062d15aacc9eaec7f12dab1e514";
 
     // 如果需要使用HTTPS，直接修改url即可
     //private static String url = "https://api.getui.com/apiex.htm";
     private static String url = "http://api.getui.com/apiex.htm";
 
     public static void main(String[] args) {
-        Map<String, Object> stringObjectMap = pushMessage(url, appId2, appKey2, masterSecret2, clientId,
-                "标题22", "内容22");
+        Map<String, Object> stringObjectMap = pushMessage(url, appId, appKey, masterSecret, clientId,
+                "标题" + System.currentTimeMillis(),
+                "内容" + System.currentTimeMillis());
 
         for(Map.Entry<String, Object> entry : stringObjectMap.entrySet()){
             String mapKey = entry.getKey();
@@ -113,6 +106,7 @@ public class PushMessage {
 
         // 设置第三方通知
         template.set3rdNotifyInfo(notify);
+
         return template;
     }
 
