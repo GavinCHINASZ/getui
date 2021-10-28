@@ -27,6 +27,7 @@ public class PushMessage {
         Map<String, Object> stringObjectMap = pushMessage(url, appId, appKey, masterSecret, clientId,
                 "标题" + System.currentTimeMillis(),
                 "内容" + System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis());
 
         for(Map.Entry<String, Object> entry : stringObjectMap.entrySet()){
             String mapKey = entry.getKey();
